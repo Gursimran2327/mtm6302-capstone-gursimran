@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffc6d3; /* Pink background */
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+.pokedex-title {
+    color: #FFD700; /* Yellow color */
+    font-weight: bold;
+    font-size: 4em; /* Adjust size as needed */
+    text-shadow: -2px -2px 0px blue, 2px -2px 0px blue, -2px 2px 0px blue, 2px 2px 0px blue; /* Thick blue outline */
+    margin: 0;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #9BD580; /* Green strip */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.search-icon {
+    background-color: red; /* Red background */
+    color: white; /* Icon color */
+    padding: 8px;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.5em; /* Size of the icon */
+    margin-left: 10px; /* Space between input and icon */
+}
+
+#search-bar {
+    width: 80%; /* Adjust width as necessary */
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Default to 5 columns */
+    gap: 20px; /* Space between items */
+    padding: 20px;
+}
+
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .grid {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
+}
+
+.pokemon-card {
+    border: 1px solid #ddd; /* Optional: Keep the border */
+    padding: 10px;
+    text-align: left; /* Align text to the left */
+    cursor: pointer;
+    position: relative; /* For positioning the icon */
+    background-color: white; /* White background */
+    border-radius: 5px; /* Optional: Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out the contents */
+    align-items: center; /* Center items vertically */
+}
+
+.pokemon-info {
+    display: flex; /* Use flexbox for the name and image */
+    align-items: center; /* Center items vertically */
+}
+
+.pokemon-image {
+    width: 100px;  /* Change to your desired width */
+    height: auto;  /* This maintains the aspect ratio */
+    margin-left: 10px;  /* Optional: add some space between the name and image */
+}
+
+.lock-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+}
+
+#pokemon-detail {
+    padding: 20px;
+    text-align: center;
+}
+
+#caught-icon {
+    font-size: 24px;
+    color: green;
+}
+
+
+.hidden {
+    display: none;
+}
+.load-more-button {
+    display: block; /* Make it a block element */
+    margin: 20px auto; /* Center the button */
+    padding: 10px 20px; /* Add some padding */
+    font-size: 1.2em; /* Font size */
+    color: white; /* Text color */
+    background-color: #007BFF; /* Blue background color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.load-more-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+/* Existing styles... */
+
+/* Detailed view styles */
+#pokemon-detail {
+    padding: 20px;
+    text-align: center;
+}
+
+.pokemon-description {
+    color: pink; /* Pink color for the description */
+    font-size: 1.2em; /* Adjust font size as needed */
+    margin: 10px 0; /* Add some spacing around the description */
+}
+
+/* Stats Section */
+.stats-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center; /* Center the stats cards */
+    margin: 20px 0; /* Space above and below the stats */
+}
+
+.stat-card {
+    background-color: #fff; /* White background for the stat cards */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the cards */
+    margin: 10px; /* Margin between cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center the text */
+    flex: 1 1 120px; /* Flex item that grows and shrinks with a minimum width */
+}
+
+/* Stats label and value styles */
+.stat-label {
+    font-weight: bold; /* Bold text for labels */
+    display: block; /* Block display to stack label and value */
+}
+
+.stat-value {
+    color: #007BFF; /* Blue color for values */
+}
+
+/* Evolution Section */
+.evolution-section {
+    margin-top: 20px; /* Space above the evolution section */
+}
+
+.evolution-section h3 {
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+#evolution-images {
+    display: flex;
+    justify-content: center; /* Center evolution images */
+    flex-wrap: wrap; /* Allow wrapping for multiple images */
+}
+
+.evolution-image {
+    width: 80px; /* Set a width for evolution images */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Space between images */
+}
+
+/* Optional arrow styling between evolution images */
+.evolution-arrow {
+    margin: 0 5px; /* Space around the arrow */
+    font-size: 24px; /* Size of the arrow icon */
+}
+
+/* Caught icon styling */
+#caught-icon {
+    font-size: 24px;
+    color: green;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Load More Button */
+.load-more-button {
+    display: block; /* Make it a block element */
+    margin: 20px auto; /* Center the button */
+    padding: 10px 20px; /* Add some padding */
+    font-size: 1.2em; /* Font size */
+    color: white; /* Text color */
+    background-color: #007BFF; /* Blue background color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.load-more-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

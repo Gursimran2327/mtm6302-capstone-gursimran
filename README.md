@@ -1,15 +1,24 @@
-# Mockup Description 
-#  Elements and User Actions:
+## Prototype of Pokémon Pokedex
+# This project uses HTML, CSS, and JavaScript to create a basic Pokémon Pokedex. Users can load additional Pokémon as needed, check Pokémon details, and toggle their "Caught" state.
 
-#  Main Screen (Gallery View):
-#  The first screen presents the first 20 Pokémon in a grid layout with their thumbnails and names.      Users can click on a Pokémon to view more details.
-#  A "Caught" button is present to allow users to mark Pokémon as caught.
-#  Uncaught Pokémon are displayed with an unlock icon, while caught Pokémon are displayed with a locked icon to visually differentiate between them.
+## Qualities
+# Pokémon cards with names and photographs are displayed on the interactive Pokémon grid.
+# To view a Pokémon card's name, image, height, weight, type, and "Caught" status, click on it.
+# Add More Pokémon: Add ten more Pokémon at once.
+# The design adapts to various screen sizes when it is responsive.
 
-#  Detailed View Screen:
-#  When a user clicks on a Pokémon, a new screen shows more details about that Pokémon (such as abilities and type) along with a larger image.
+## Technology 
+# HTML was used for structuring.
+# CSS: For layout and style.
+# Toggling the "Caught" state and loading Pokémon are examples of dynamic interactions that use JavaScript.
 
-#  Caught List Screen:
-#  The caught Pokémon are shown in a separate screen titled "Caught List," where all the Pokémon marked as caught are displayed.
-#  Caught Pokémon in the list are displayed with the locked icon to indicate they have been caught.
-#  Each Pokémon in the caught list has a Release button that allows the user to remove that Pokémon from the list, effectively releasing it.
+## Actions Done
+# constructed the rudimentary HTML structure and applied CSS styling.
+# JavaScript was used to display Pokémon in a grid and provide comprehensive information when a click was made.
+# To display additional Pokémon and toggle their "Caught" status, the "Load More" button was added.
+# Difficulties in Managing Dynamic Data: Making certain that Pokémon data was appropriately loaded and presented.
+# Making sure the layout functions properly on desktop and mobile devices is known as responsive design.
+# Event Handling: Verifying that the right Pokémon was clicked and that the "Caught" state was toggled.
+
+## In conclusion
+# A functional, interactive online application displaying Pokémon data is the Pokémon Pokedex prototype. With its emphasis on responsive design and interactivity, the project improved my front-end development abilities.

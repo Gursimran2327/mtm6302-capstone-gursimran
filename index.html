@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="pokedex-title">Pokedex</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Search Pokémon..." id="search-bar">
+            <div class="search-icon">🔍</div>
+        </div>
+    </header>
+
+    <!-- Main Pokémon Grid -->
+    <section id="pokemon-grid" class="grid">
+        <h2>Pokémon List</h2>
+    </section>
+
+    <button id="load-more" class="load-more-button">Load More</button>
+    
+   <!-- Detailed View -->
+<section id="pokemon-detail" class="detail hidden">
+    <h2 id="pokemon-name">Pokemon Name</h2>
+    <img id="pokemon-image" src="placeholder-image.jpg" alt="Pokemon Image">
+    <p id="pokemon-description" class="pokemon-description">A brief description of the Pokémon in pink font.</p>
+    
+    <div class="stats-section">
+        <div class="stat-card">
+            <span class="stat-label">Height:</span> <span id="pokemon-height" class="stat-value"></span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Weight:</span> <span id="pokemon-weight" class="stat-value"></span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Type:</span> <span id="pokemon-type" class="stat-value"></span>
+        </div>
+    </div>
+
+    <button id="caught-button" onclick="toggleCaughtStatus()">Caught</button>
+    <button onclick="closeDetail()">Back to list</button>
+</section>
+
+<span id="caught-icon">🔒</span>
+<button onclick="closeDetail()">Back to list</button>
+
+
+
+    <!-- Caught List -->
+    <section id="caught-list" class="grid hidden">
+        <h2>Caught Pokémon</h2>
+        <div id="caught-grid">
+            <!-- Caught Pokémon will be added here dynamically -->
+        </div>
+        <button onclick="backToMain()">Back to Main List</button>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
