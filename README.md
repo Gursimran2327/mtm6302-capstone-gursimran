@@ -1,24 +1,101 @@
-## Prototype of Pokémon Pokedex
-# This project uses HTML, CSS, and JavaScript to create a basic Pokémon Pokedex. Users can load additional Pokémon as needed, check Pokémon details, and toggle their "Caught" state.
+# Capstone Project - Part 4: Pokedex Web Application
 
-## Qualities
-# Pokémon cards with names and photographs are displayed on the interactive Pokémon grid.
-# To view a Pokémon card's name, image, height, weight, type, and "Caught" status, click on it.
-# Add More Pokémon: Add ten more Pokémon at once.
-# The design adapts to various screen sizes when it is responsive.
+## Requirements and How They Were Met:
 
-## Technology 
-# HTML was used for structuring.
-# CSS: For layout and style.
-# Toggling the "Caught" state and loading Pokémon are examples of dynamic interactions that use JavaScript.
+### 1. **Use of HTML, CSS, and JavaScript Files**
+   - I created three main files for the project:
+     - **`index.html`**: Defines the structure of the web page.
+     - **`style.css`**: Responsible for styling the web page.
+     - **`script.js`**: Handles dynamic behaviors using JavaScript (e.g., fetching data, handling events).
 
-## Actions Done
-# constructed the rudimentary HTML structure and applied CSS styling.
-# JavaScript was used to display Pokémon in a grid and provide comprehensive information when a click was made.
-# To display additional Pokémon and toggle their "Caught" status, the "Load More" button was added.
-# Difficulties in Managing Dynamic Data: Making certain that Pokémon data was appropriately loaded and presented.
-# Making sure the layout functions properly on desktop and mobile devices is known as responsive design.
-# Event Handling: Verifying that the right Pokémon was clicked and that the "Caught" state was toggled.
+### 2. **Modern CSS Frameworks**
+   - I did not use any CSS frameworks like **Bootstrap** or **Tailwind**. Instead, I used **CSS Grid** and **media queries** for styling and responsiveness.
 
-## In conclusion
-# A functional, interactive online application displaying Pokémon data is the Pokémon Pokedex prototype. With its emphasis on responsive design and interactivity, the project improved my front-end development abilities.
+### 3. **JavaScript Libraries**
+   - No external JavaScript libraries (like **jQuery**) were used. All functionality was implemented using **vanilla JavaScript** and the **Fetch API**.
+
+### 4. **Event Listeners (No Inline Events)**
+   - All **inline events** (e.g., `onclick="..."`) were removed from the HTML. Instead, I used **JavaScript event listeners** to handle actions such as button clicks and interactions.
+     - Example:
+       ```javascript
+       document.getElementById('back-button').addEventListener('click', closeDetail);
+       ```
+
+### 5. **Use of `const` and `let` (No `var`)**
+   - I used **`const`** for variables that do not change and **`let`** for variables that change.
+     - Example:
+       ```javascript
+       const pokemonGrid = document.getElementById('pokemon-grid');
+       let currentPokemonCount = 20;
+       ```
+
+### 6. **Use of Fetch API (No XMLHttpRequest)**
+   - The **Fetch API** was used to fetch data asynchronously.
+     - Example:
+       ```javascript
+       async function fetchPokemonData() {
+           const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20');
+           const data = await response.json();
+           // Use the fetched data to update the page
+       }
+       ```
+
+### 7. **Responsive Web Application**
+   - The application is **responsive**, and its layout adjusts based on screen size. I used **CSS Grid** and **media queries** to make sure it works well on various devices (e.g., desktop, tablet, mobile).
+     - Example:
+       ```css
+       @media (max-width: 768px) {
+           .grid {
+               grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+           }
+       }
+       ```
+
+### 8. **No Page Refreshes (Dynamic Updates)**
+   - The application does **not refresh** the page when loading more Pokémon or viewing details. It updates **dynamically** using **JavaScript** and the **Fetch API**, providing a seamless user experience.
+     - Example:
+       ```javascript
+       document.getElementById('load-more').addEventListener('click', () => {
+           displayPokemons(currentPokemonCount, loadCount);
+           currentPokemonCount += loadCount;
+       });
+       ```
+
+## Explanation of `script.js` Code:
+
+### 1. **Initial Setup - Selecting HTML Elements**
+   - The script selects the necessary **HTML elements** for displaying the Pokémon and for interacting with the user (like loading more Pokémon or viewing details).
+   ```javascript
+   const pokemonGrid = document.getElementById('pokemon-grid');
+   let currentPokemonCount = 20; 
+   const loadCount = 10; 
+
+## Pokémon Data
+- The pokemons array contains the data for each Pokémon, including their ID, name, image, height, weight, and type.
+```javascript
+Copy code
+const pokemons = [
+    { id: 1, name: "Bulbasaur", img: "https://...", height: "0.7m", weight: "6.9kg", type: "Grass" },
+    
+];
+
+## Dynamic Display of Pokemon
+Displaying Pokémon: The displayPokemons() function dynamically creates Pokémon cards based on the array of Pokémon.
+```javascript
+function displayPokemons(startIndex, count) {
+    const pokemonsToShow = pokemons.slice(startIndex, startIndex + count);
+}
+### Handling User Interactions
+Showing Pokémon Details: When a user clicks on a Pokémon card, it shows more detailed information about the Pokémon.
+pokemonCard.addEventListener('click', () => showDetail(pokemon));
+
+### Toggle caught status 
+The "Caught" button toggles the caught status of the currently selected Pokémon.
+function toggleCaughtStatus() {
+    if (currentPokemon) {
+        currentPokemon.caught = !currentPokemon.caught;
+        document.getElementById('caught-button').innerText = currentPokemon.caught ? 'Uncaught' : 'Caught';
+        updatePokemonGrid(); // Re-render the grid after status change
+    }
+}
+
